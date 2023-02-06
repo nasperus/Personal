@@ -453,6 +453,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ca92ea3450af0468f32e84ad4430c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  candySpawner:
+  - {fileID: 6262849359158953493, guid: ad2eae8cdaee164488b24ec17becc199, type: 3}
+  - {fileID: 505568830740562160, guid: b5145186e0768bf4d9f30eeefe5dea8c, type: 3}
+  - {fileID: 3286365164911225099, guid: 99536b90358c3654f890e58c28cef3b2, type: 3}
+  - {fileID: 3407232241473085215, guid: a019c2b799e9569449ed574a82cff4e8, type: 3}
+  spawnInterval: 1.1
 --- !u!4 &978424542
 Transform:
   m_ObjectHideFlags: 0
@@ -611,6 +617,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 505568831671530710, guid: b5145186e0768bf4d9f30eeefe5dea8c, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5145186e0768bf4d9f30eeefe5dea8c, type: 3}
 --- !u!1001 &3286365166047680366
@@ -672,6 +682,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3286365166047680368, guid: 99536b90358c3654f890e58c28cef3b2, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99536b90358c3654f890e58c28cef3b2, type: 3}
 --- !u!1001 &3407232241459741791
@@ -681,6 +695,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3407232241459741793, guid: a019c2b799e9569449ed574a82cff4e8, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3407232241473085213, guid: a019c2b799e9569449ed574a82cff4e8, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -742,6 +760,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5629050256703100350, guid: ad2eae8cdaee164488b24ec17becc199, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6262849359158953493, guid: ad2eae8cdaee164488b24ec17becc199, type: 3}
       propertyPath: m_Name
       value: Candy1
@@ -793,6 +815,10 @@ PrefabInstance:
     - target: {fileID: 6262849359158953495, guid: ad2eae8cdaee164488b24ec17becc199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262849359292620866, guid: ad2eae8cdaee164488b24ec17becc199, type: 3}
+      propertyPath: m_Simulated
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2eae8cdaee164488b24ec17becc199, type: 3}
