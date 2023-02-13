@@ -5,26 +5,32 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    [SerializeField] [Range(0, 20)] int moveSpeed;
-    private int moveX = 8;
-    
-    void Start()
+    [SerializeField] [Range(0,20)] int moveSpeed;
+    private readonly int xAxis = 8;
+    public  bool canMove = true;
+   
+  
+
+    private void Update()
     {
+       
+            Move();
+        
         
     }
 
-    
-    void Update()
-    {
-        Move();
-    }
 
     private void Move()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        transform.position += Vector3.right* horizontal * moveSpeed * Time.deltaTime;
-        float movePos = Mathf.Clamp(transform.position.x, -moveX, moveX);
-        transform.position = new Vector3(movePos, transform.position.y, transform.position.z);
+        float moveX = Input.GetAxisRaw("Horizontal");
+        transform.position += Vector3.right * moveX * moveSpeed * Time.deltaTime;
+        float moveXpos = Mathf.Clamp(transform.position.x, -xAxis, xAxis);
+        transform.position = new Vector3(moveXpos, transform.position.y, transform.position.z);
+       if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
     }
 
 

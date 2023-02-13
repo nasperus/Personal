@@ -1,46 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+
 
 public class CandySpawner : MonoBehaviour
 {
-    [SerializeField] GameObject[] candySpawner;
-    [SerializeField] float spawnInterval;
-     private readonly int randPosition = 8;
+    [SerializeField] GameObject[] candies;
+    private readonly int candyPos = 8;
+    public static CandySpawner instance;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
-        StartSpawningCandies();
+        StartSwpawningCandies();
     }
 
-  
- 
+
     private void CreateCandies()
     {
-        int randCandy = Random.Range(0,candySpawner.Length);
-        float candyPos = Random.Range(-randPosition, randPosition);
-        Vector3 randPos =  new Vector3(candyPos, transform.position.y, transform.position.z);
-        Instantiate(candySpawner[randCandy], randPos, transform.rotation);
+        int randCandy = Random.Range(0, candies.Length);  
+        float randomPos = Random.Range(-candyPos, candyPos);
+        Vector3 pos = new Vector3(randomPos, transform.position.y, transform.position.z);
+        Instantiate(candies[randCandy], pos, transform.rotation);
         
-
     }
-
-    IEnumerator SpawnCandies()
+   
+    IEnumerator SpawnCandies ()
     {
-       
         yield return new WaitForSeconds(2f);
-           
         while (true)
         {
             CreateCandies();
-            yield return new WaitForSeconds(spawnInterval);
-        }
+            yield return new WaitForSeconds(1f);
 
+
+        }
     }
 
-
-    public void StartSpawningCandies()
+    private void StartSwpawningCandies()
     {
         StartCoroutine("SpawnCandies");
     }
@@ -49,4 +49,5 @@ public class CandySpawner : MonoBehaviour
     {
         StopCoroutine("SpawnCandies");
     }
+
 }
